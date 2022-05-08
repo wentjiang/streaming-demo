@@ -11,7 +11,7 @@ public class StreamingDemo {
     public static void main(String[] args) throws Exception {
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
         DataStream<Student> studentStream = env.fromCollection(StudentUtil.getStudents());
-        DataStream<Student> filteredStudentStream = studentStream.filter((FilterFunction<Student>) student -> student.getAge() > 12);
+        DataStream<Student> filteredStudentStream = studentStream.filter((FilterFunction<Student>) student -> student.getAge() > 13);
         filteredStudentStream.print();
         env.execute();
     }
